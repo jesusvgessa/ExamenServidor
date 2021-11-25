@@ -1,6 +1,6 @@
 <?php
 $servidor = "localhost";
-$baseDatos = "viviendas";
+$baseDatos = "lindavista";
 $usuario = "root";
 $pass = "root";
 
