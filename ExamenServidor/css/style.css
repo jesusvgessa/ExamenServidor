@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* HEADER */
+
+/* MENU */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+nav li {
+    float: left;
+}
+  
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+    background-color: #07AD87;
+    border: 1px solid #038265;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 1em 1em 0 0;
+    transition: all ease-in-out 400ms;
+}
+  
+nav a:hover {
+    background-color: #038265;
+}
+
+/* FORM */
+h1{
+	color: #fff;
+	text-align: center;
+}
+.form-register{
+	width: 95%;
+	max-width: 500px;
+	margin: auto;
+	background: #07AD87;
+	border-radius: 7px;
+}
+.form-titulo{
+	background: #038265;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-weight: 100;
+	font-size: 30px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom: 3px solid #EA484E;
+
+}
+.contenedor-inputs{
+	padding: 10px 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+input{
+	margin-bottom: 15px;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 3px;
+	border: 1px solid darkgray;
+}
+.input-48{
+	width: 48%;
+}
+.input-100{
+	width: 100%;
+}
+.btn-enviar{
+	background: white;
+	color: black;
+	margin: auto;
+	padding: 10px 40px;
+	cursor: pointer;
+	font-size: 20px;
+
+}
+.btn-enviar:hover{
+background: #0EA7E7;
+transform: scale(1.1);
+}
+.btn-enviar:active{
+	transform: scale(1.2);
+}
+#errores{
+	color:red;
+}
+
+/* TABLE */
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
