@@ -9,11 +9,11 @@
     </head>
     <body>
         <header>
-
+            <h1>EXAMEN DE ENTORNO SERVIDOR</h1>
         </header>
         <nav>
             <ul>
-                <li><a class="active" href="insertarVivienda.php">Nueva Vivienda</a></li>
+                <li><a href="index.html">Nueva Vivienda</a></li>
                 <li><a href="lista.php">Lista viviendas</a></li>
             </ul>
         </nav>
@@ -31,8 +31,8 @@
 
             //Para que si no se marca algun extra, no devuelva un valor nulo.
             function filtrarExtras($valor){
-                if ($valor == null){
-                    $valor = '';
+                if ($valor == null || $valor == ""){
+                    $valor = 'No incluye';
                 }//Fin Si
                 return $valor;
             }//Fin Funcion
@@ -46,10 +46,39 @@
             }//Fin Si
             $id = insertaVivienda($_POST["tipo"], $_POST["zona"], seguro($_POST["direccion"]), $_POST["ndormitorios"], $_POST["precio"], $_POST["tamano"], filtrarExtras($_POST["extras"]), $avatar, seguro($_POST["observaciones"]));
             if ($id != 0) {
-                header("Location: vista.php?varId=$id");
-                exit();
+                echo "<div class='insercion'>";
+                echo "<h1>Insercion de vivienda</h1><br>";
+                echo "<p>Estos son los datos introducidos</p><br>";
+                echo "<ul>";
+                echo "<li>Tipo: ".$_POST["tipo"]."</li>";
+                echo "<li>Zona: ".$_POST["zona"]."</li>";
+                echo "<li>Direccion: ".$_POST["direccion"]."</li>";
+                echo "<li>Numero de dormitorios: ".$_POST["ndormitorios"]."</li>";
+                echo "<li>Precio: ".$_POST["precio"]."€</li>";
+                echo "<li>Tamaño: ".$_POST["tamano"]." metros cuadrados</li>";
+                echo "<li>Extras: ".$_POST["extras"]."</li>";
+                echo "<li>Foto: ".$avatar."</li>";
+                echo "<li>Observaciones: ".$_POST["observaciones"]."</li>";
+                echo "</ul><br>";
+                echo "<a href='index.html'>[ Insertar otra vivienda ]</a>" ;
+                echo "</div>";
             } else {
-                $error = "Datos incorrectos";
+                echo "<div class='insercion'>";
+                echo "<h1>Insercion de vivienda</h1><br>";
+                echo "<p>No se ha podido realizar la insercion debido a los siguientes errores:</p><br>";
+                echo "<ul>";
+                echo "<li>Tipo: </li>";
+                echo "<li>Zona: </li>";
+                echo "<li>Direccion: </li>";
+                echo "<li>Numero de dormitorios: </li>";
+                echo "<li>Precio: €</li>";
+                echo "<li>Tamaño: metros cuadrados</li>";
+                echo "<li>Extras: </li>";
+                echo "<li>Foto: </li>";
+                echo "<li>Observaciones: </li>";
+                echo "</ul><br>";
+                echo "<a href='index.html'>[ Volver ]</a>" ;
+                echo "</div>";
             }//Fin Si
         }//Fin Si
         ?>

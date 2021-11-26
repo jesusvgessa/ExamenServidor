@@ -9,9 +9,12 @@
     <title>Lista elementos</title>
 </head>
 <body>
+    <header>
+        <h1>EXAMEN DE ENTORNO SERVIDOR</h1>
+    </header>
     <nav>
         <ul>
-            <li><a class="active" href="insertarVivienda.php">Nueva Vivienda</a></li>
+            <li><a href="index.html">Nueva Vivienda</a></li>
             <li><a href="lista.php">Lista viviendas</a></li>
         </ul>
     </nav>

@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $baseDatos = "lindavista";
 $usuario = "root";
-$pass = "root";
+$pass = "";
 
 function obtenerVivienda($id){
     try {
@@ -29,7 +29,7 @@ function obtenerVivienda($id){
 function obtenerTodas(){
     try {
         $con = new PDO("mysql:host=" . $GLOBALS['servidor'] . ";dbname=" . $GLOBALS['baseDatos'], $GLOBALS['usuario'], $GLOBALS['pass']);
-        $sql = $con->prepare("SELECT id, tipo, zona, direccion ,ndormitorios, precio, tamano, extras, foto, observaciones from viviendas;");
+        $sql = $con->prepare("SELECT id, tipo, zona, direccion ,ndormitorios, precio, tamano, extras, foto, observaciones from viviendas ORDER BY precio;");
         $sql->execute();
         $miArray = [];
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) { //Haciendo uso de PDO iremos creando el array dinámicamente

@@ -9,23 +9,23 @@
     </head>
     <body>
         <header>
-
+            <h1>EXAMEN DE ENTORNO SERVIDOR</h1>
         </header>
         <nav>
             <ul>
-                <li><a href="insertarVivienda.php">Nueva Vivienda</a></li>
+                <li><a href="index.html">Nueva Vivienda</a></li>
                 <li><a href="lista.php">Lista viviendas</a></li>
             </ul>
         </nav>
-        <form class="form-register" action="insertarVivienda.php" method="POST" enctype="multipart/form-data">
-            <h2 class="form-titulo">Inserción de vivienda:</h2>
+        <form class="form" action="insertarVivienda.php" method="POST" enctype="multipart/form-data">
+            <h2>Inserción de vivienda:</h2>
             <p>Introduzca los datos de la vivienda:</p>
-            <div class="contenedor-inputs">
+            <div>
                 <table>
                     <tr>
                         <td><b>Tipo de vivienda:</b></td>
                         <td>
-                            <select name="tipo" class="input-48">
+                            <select name="tipo">
                                 <option value="Piso">Piso</option>
                                 <option value="Adosado">Adosado</option>
                                 <option value="Chalet">Chalet</option>
@@ -36,19 +36,19 @@
                     <tr>
                         <td><b>Zona:</b></td>
                         <td>
-                        <select name="zona" class="input-48">
-                            <option value="Centro">Centro</option>
-                            <option value="Nervion">Nervion</option>
-                            <option value="Triana">Triana</option>
-                            <option value="Aljarafe">Aljarafe</option>
-                            <option value="Macarena">Macarena</option>
-                        </select>
+                            <select name="zona">
+                                <option value="Centro">Centro</option>
+                                <option value="Nervion">Nervion</option>
+                                <option value="Triana">Triana</option>
+                                <option value="Aljarafe">Aljarafe</option>
+                                <option value="Macarena">Macarena</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td><b>Direccion:</b></td>
                         <td>
-                            <input type="text" name="direccion" placeholder="Direccion" class="input-100" required>
+                            <input type="text" name="direccion" placeholder="Direccion" class="texto" required>
                         </td>
                     </tr>
                     <tr>
@@ -69,14 +69,14 @@
                     <tr>
                         <td><b>Precio:</b></td>
                         <td>
-                            <input type="number" name="precio" placeholder="Precio" class="input-48" required>
+                            <input type="number" name="precio" placeholder="Precio" class="texto" required>
                             <label for="precio">€</label>
                         </td>
                     </tr>
                     <tr>
                         <td><b>Tamaño:</b></td>
                         <td>
-                            <input type="number" name="tamano" placeholder="Tamaño" class="input-100" required>
+                            <input type="number" name="tamano" placeholder="Tamaño" class="texto" required>
                             <label for="tamano">metros cuadrados</label>
                         </td>
                     </tr>
@@ -94,7 +94,7 @@
                     <tr>
                         <td><b>Foto:</b></td>
                         <td>
-                            <input type="file" name="avatar" accept="image/png, image/jpeg" class="input-100">
+                            <input type="file" name="avatar" accept="image/png, image/jpeg">
                         </td>
                     </tr>
                     <tr>
@@ -103,12 +103,8 @@
                         <textarea placeholder="Escribe tu mensaje..." name="observaciones" spellcheck="true" rows="8" cols="50" required></textarea>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Insertar vivienda" class="btn-enviar">
-                        </td>
-                    </tr>
                 </table>
+                <input type="submit" value="Insertar vivienda" class="boton">
             </div>
         </form>
     </body>
