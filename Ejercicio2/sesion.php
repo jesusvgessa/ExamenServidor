@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Ejercicio1/css/style.css">
-    <title>Sesion</title>
-</head>
-<body>
-    <header>
-        <h1>Ejercicio 2 - Examen servidor</h1>
-    </header>
-    <?php
-    
-    ?>
-</body>
-</html>
+<?php
+
+$usuario = $_POST['usuario'];
+$pass = $_POST['pass'];
+
+//Si el usuario y la contraseña son iguales, inicio sesion
+if ($usuario == $pass && $usuario != "" && $pass!=""){
+    // Si se usa debe contener (sólo caracteres alfanuméricos) e ir antes de session_start():
+    session_id("inicioSesion");
+
+    // Iniciar la sesión
+    session_start();
+
+    // Variables de sesión:
+    $_SESSION['sesion_iniciada'] = true;
+    $_SESSION['username'] = $usuario;
+    header("location: paginaprincipal.php");
+}else{
+    header("location: error.php");
+}//Fin Si
+
+?>
