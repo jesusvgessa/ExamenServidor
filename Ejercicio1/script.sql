@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `animales`
+-- Base de datos: `viviendas`
 --
 CREATE DATABASE IF NOT EXISTS `lindavista` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `lindavista`;
@@ -38,7 +38,7 @@ CREATE TABLE `viviendas` (
   `ndormitorios` text NOT NULL,
   `precio` decimal NOT NULL,
   `tamano` decimal NOT NULL,
-  `extras` text NOT NULL,
+  `extras` SET('','Piscina', 'Jardin', 'Garaje') NOT NULL,
   `foto` text NOT NULL,
   `observaciones` text NOT NULL
 ) ;
@@ -47,9 +47,9 @@ CREATE TABLE `viviendas` (
 -- Volcado de datos para la tabla `viviendas`
 --
 
-INSERT INTO `viviendas` (`id`, `tipo`, `zona`, `direccion`, `ndormitorios`, `precio`, `tamano`, `extras`,`foto`, `observaciones`) VALUES
-(1, 'Piso', 'Nervion', 'Santa Catalina', '1', 3000, 20, 'Piscina', 'noimage.jpeg', 'Mu bonito'),
-(2, 'Chalet', 'Macarena', 'Santa Catalino', '4', 5000, 30, '', 'noimage.jpeg', 'Grande y preziozo');
+INSERT INTO `viviendas` (`id`, `tipo`, `zona`, `direccion`, `ndormitorios`, `precio`, `tamano`, `extras`, `foto`, `observaciones`) VALUES
+(1, 'Piso', 'Nervion', 'Santa Catalina', '1', 3000, 20, ('Piscina'), 'noimage.jpeg', 'Mu bonito'),
+(2, 'Chalet', 'Macarena', 'Santa Catalino', '4', 5000, 30, (''), 'noimage.jpeg', 'Grande y preziozo');
 
 --
 -- Checks

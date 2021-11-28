@@ -32,7 +32,7 @@
             //Para que si no se marca algun extra, no devuelva un valor nulo.
             function filtrarExtras($valor){
                 if ($valor == null || $valor == ""){
-                    $valor = 'No incluye';
+                    $valor = '';
                 }//Fin Si
                 return $valor;
             }//Fin Funcion
@@ -44,6 +44,7 @@
                 //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                 chmod('fotos/' . $avatar, 0777);
             }//Fin Si
+            
             $id = insertaVivienda($_POST["tipo"], $_POST["zona"], seguro($_POST["direccion"]), $_POST["ndormitorios"], $_POST["precio"], $_POST["tamano"], filtrarExtras($_POST["extras"]), $avatar, seguro($_POST["observaciones"]));
             if ($id != 0) {
                 echo "<div class='insercion'>";

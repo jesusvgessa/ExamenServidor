@@ -36,6 +36,7 @@
 
             $listaViviendas = obtenerTodas();
 
+
             for ($i=0;$i<sizeof($listaViviendas);$i++){
                 echo "<tr>";
                 echo "<td>".$listaViviendas[$i]['tipo']."</td>";
@@ -44,7 +45,7 @@
                 echo "<td>".$listaViviendas[$i]['precio']."</td>";
                 echo "<td>".$listaViviendas[$i]['tamano']."</td>";
                 echo "<td>".$listaViviendas[$i]['extras']."</td>";
-                echo "<td><a href='vista.php?varId=".$listaViviendas[$i]['id']."'><i class='fas fa-images'></i></a></td>";
+                echo "<td><a href='fotos/".$listaViviendas[$i]['foto']."'><i class='fas fa-images'></i></a></td>";
                 echo "</tr>";
             }//Fin Para
 
