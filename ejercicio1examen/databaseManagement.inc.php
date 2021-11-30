@@ -1,3 +1,4 @@
+<!-- Jesus Vazquez Gessa -->
 <?php
 $servidor = "localhost";
 $baseDatos = "lindavista";

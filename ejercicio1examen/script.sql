@@ -1,3 +1,4 @@
+-- Jesus Vazquez Gessa
 -- phpMyAdmin SQL Dump
 -- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
@@ -38,7 +39,7 @@ CREATE TABLE `viviendas` (
   `ndormitorios` text NOT NULL,
   `precio` decimal NOT NULL,
   `tamano` decimal NOT NULL,
-  `extras` SET('','Piscina', 'Jardin', 'Garaje') NOT NULL,
+  `extras` SET('Piscina', 'Jardin', 'Garaje') NOT NULL,
   `foto` text NOT NULL,
   `observaciones` text NOT NULL
 ) ;

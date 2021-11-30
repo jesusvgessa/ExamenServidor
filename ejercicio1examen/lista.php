@@ -1,3 +1,4 @@
+<!-- Jesus Vazquez Gessa -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,17 @@
             <li><a href="lista.php">Lista viviendas</a></li>
         </ul>
     </nav>
+    <div class="filtro">
+        <p>Mostrar viviendas de tipo: </p>
+        <select name="select">
+            <option value="0">Todos</option>
+            <option value="Piso">Piso</option>
+            <option value="Adosado">Adosado</option>
+            <option value="Chalet">Chalet</option>
+            <option value="Casa">Casa</option>
+        </select>
+        <button type="submit">Actualizar</button>
+    </div>
     <div class="form">
         <table class="styled-table">
             <thead>

@@ -1,3 +1,4 @@
+<!-- Jesus Vazquez Gessa -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,8 +32,30 @@
 
             //Para que si no se marca algun extra, no devuelva un valor nulo.
             function filtrarExtras($valor){
-                if ($valor == null || $valor == ""){
-                    $valor = '';
+                $extras = "";
+                $piscina=array_key_exists("Piscina",$_POST) ? $_POST["Piscina"] : "";
+                $jardin=array_key_exists("Jardin",$_POST) ? $_POST["Jardin"] : "";
+                $garaje=array_key_exists("Garaje",$_POST) ? $_POST["Garaje"] : "";
+
+                if($piscina!=""){
+                    $extras = $extras.$_POST["Piscina"];
+                }
+                if($jardin!=""){
+                    $extras = $extras.$_POST["Jardin"];
+                }
+                if($garaje!=""){
+                    $extras = $extras.$_POST["Garaje"];
+                }
+                if($extras == ""){
+                    $extras = "No incluye";
+                }
+                return $extras;
+            }//Fin Funcion
+
+            //Opcion por defecto de ndormitorios es 3
+            function filtroDorm($valor){
+                if ($valor == null || $valor == 0 ){
+                    $valor = 3;
                 }//Fin Si
                 return $valor;
             }//Fin Funcion
@@ -45,7 +68,7 @@
                 chmod('fotos/' . $avatar, 0777);
             }//Fin Si
             
-            $id = insertaVivienda($_POST["tipo"], $_POST["zona"], seguro($_POST["direccion"]), $_POST["ndormitorios"], $_POST["precio"], $_POST["tamano"], filtrarExtras($_POST["extras"]), $avatar, seguro($_POST["observaciones"]));
+            $id = insertaVivienda($_POST["tipo"], $_POST["zona"], seguro($_POST["direccion"]), filtroDorm($_POST["ndormitorios"]), $_POST["precio"], $_POST["tamano"], filtrarExtras($_POST["extras"]), $avatar, seguro($_POST["observaciones"]));
             if ($id != 0) {
                 echo "<div class='insercion'>";
                 echo "<h1>Insercion de vivienda</h1><br>";
